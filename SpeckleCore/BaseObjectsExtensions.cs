@@ -163,8 +163,6 @@ namespace SpeckleCore
     {
         public string Text { get; set; }
         public SpecklePoint Loc { get; set; }
-        public string ApplicationId { get; set; }
-        public Dictionary<string, object> Properties { get; set; }
         
         
         public SpeckleTextDot() { }

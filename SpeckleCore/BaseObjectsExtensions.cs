@@ -158,7 +158,22 @@ namespace SpeckleCore
         }
     }
     
+    public partial class SpeckleTextDot
+    {
+        public SpeckleTextDot() { }
 
+        public SpeckleTextDot(string text, SpecklePoint loc, applicationId = null, Dictionary<string, object> properties = null)
+        {
+            this.text = Text;
+            this.loc = Loc
+            this.ApplicationId = applicationId;
+            this.Properties = properties;
+
+            SetHashes(this.Value);
+        }
+
+
+    }
     
     public partial class SpecklePoint
     {
@@ -197,15 +212,6 @@ namespace SpeckleCore
             SetHashes(this.Value);
         }
 
-        public static implicit operator double[] (SpeckleVector p)
-        {
-            return p.Value;
-        }
-
-        public static implicit operator SpecklePoint(SpeckleVector p)
-        {
-            return new SpecklePoint(p.Value[0], p.Value[1], p.Value[2], null, p.Properties);
-        }
     }
 
     public partial class SpecklePlane

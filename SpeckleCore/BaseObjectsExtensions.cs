@@ -162,7 +162,7 @@ namespace SpeckleCore
     {
         public SpeckleTextDot() { }
         
-        public SpeckleTextDot(string text, SpecklePoint loc)
+        public SpeckleTextDot(string text, SpecklePoint loc, string applicationId = null, Dictionary<string, object> properties = null)
         {
             this.Text = text;
             this.Loc = loc;

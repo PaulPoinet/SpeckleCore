@@ -158,22 +158,30 @@ namespace SpeckleCore
         }
     }
     
-    public partial class SpeckleTextDot
+    [Serializable]
+    public class SpeckleTextDot : SpeckleObject
     {
+        public string Text { get; set; }
+        public SpecklePoint Loc { get; set; }
+        public string ApplicationId { get; set; }
+        public Dictionary<string, object> Properties { get; set; }
+        
+        
         public SpeckleTextDot() { }
-
-        public SpeckleTextDot(string text, SpecklePoint loc, applicationId = null, Dictionary<string, object> properties = null)
+        
+        public SpeckleTextDot(string text, SpecklePoint loc, string applicationId = null, Dictionary<string, object> properties = null)
         {
+            this.Type = "TextDot";
             this.Text = text;
             this.Loc = loc;
             this.ApplicationId = applicationId;
             this.Properties = properties;
-
-            SetHashes(this.Value);
+            
+            SetHashes(this.Text + this.Loc.GeometryHash);
         }
-
-
     }
+
+
     
     public partial class SpecklePoint
     {

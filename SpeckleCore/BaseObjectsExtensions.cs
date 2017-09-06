@@ -157,7 +157,22 @@ namespace SpeckleCore
             SetHashes(U.GeometryHash + V.GeometryHash);
         }
     }
-
+    
+    public partial class SpeckleTextDot
+    {
+        public SpeckleTextDot() { }
+        
+        public SpeckleTextDot(string text, SpecklePoint loc)
+        {
+            this.Text = text;
+            this.Loc = loc;
+            this.ApplicationId = applicationId;
+            this.Properties = properties;
+            
+            SetHashes(this.Value);
+        }
+    }
+    
     public partial class SpecklePoint
     {
         public SpecklePoint() { }
@@ -467,4 +482,5 @@ namespace SpeckleCore
         public double MinY { get; set; }
         public double MinZ { get; set; }
     }
+    
 }

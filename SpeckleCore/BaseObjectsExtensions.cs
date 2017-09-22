@@ -15,6 +15,8 @@ namespace SpeckleCore
 
     public partial class SpeckleObject
     {
+
+        void shit() { }
         /// <summary>
         /// Generates a truncated (to 12) md5 hash of an object.
         /// </summary>
